@@ -1,5 +1,5 @@
+/// <reference types="vite/client" />
 import axios from "axios";
-import { ROG_KEY } from "./seqyrityKeys";
 
 export interface FetchResponse<T> {
   count: number;
@@ -9,6 +9,6 @@ export interface FetchResponse<T> {
 export default axios.create({
   baseURL: "https://api.rawg.io/api",
   params: {
-    key: ROG_KEY,
+    key: import.meta.env.VITE_ROG_KEY,
   },
 });
